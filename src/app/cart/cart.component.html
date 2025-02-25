@@ -1,0 +1,35 @@
+<div class="cart-container">
+    <h2>🛒 سلة المشتريات</h2>
+
+    <div *ngIf="cartItems.length > 0; else emptyCart">
+        <table>
+            <thead>
+                <tr>
+                    <th>المنتج</th>
+                    <th>السعر</th>
+                    <th>الكمية</th>
+                    <th>الإجمالي</th>
+                    <th>إزالة</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of cartItems; let i = index">
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.price }} ريال</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.price * item.quantity }} ريال</td>
+                    <td><button (click)="removeFromCart(i)">🗑️</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>الإجمالي: {{ getTotalPrice() }} ريال</h3>
+
+        <button (click)="goToCheckout()">🛍️ إتمام الطلب</button>
+    </div>
+
+    <ng-template #emptyCart>
+        <p>السلة فارغة، أضف منتجاتك الآن! 🛒</p>
+    </ng-template>
+</div>
+

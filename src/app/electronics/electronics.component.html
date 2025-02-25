@@ -1,0 +1,32 @@
+<app-header></app-header>
+
+<div class="container">
+    <div *ngFor="let item of data">
+        <div class="row mt-5 d-flex justify-content-center" >
+            <div class="col-sm-10 col-12 col-lg-9" >
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                        <small class="d-flex justify-content-center text-danger">{{item.price}} </small>
+                        <div class="row">
+                            <div class="col">
+                                <a class="btn btn-info text-center" [routerLink]="['/detils',item.id]"> Details </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 ">
+                        <small class="d-flex justify-content-end text-danger">{{item.title}}</small>
+                        <small class="d-flex justify-content-start">{{item.description}}</small>
+                    </div>
+                    <div class="col-sm-2 col-5 col-lg-2 d-flex justify-content-end ">
+                        <img src={{item.image}} width="80" height="80">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+   
+</div>

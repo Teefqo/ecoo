@@ -1,0 +1,18 @@
+<nav class="navbar text-center text-white" style="background-color: rgb(129, 25, 199);">
+    <div class="container">
+        <ul class="list-unstyled">
+            <li class="d-inline p-2">{{name}}</li>
+        </ul>
+
+        <!-- السلة الوحيدة -->
+        <a routerLink="/cart" class="cart-icon">
+            <i class="bi bi-basket2" style="font-size:20px;"></i>  
+            <span class="badge bg-danger">{{ count$ | async }}</span>
+        </a>
+
+        <img src="https://img.freepik.com/premium-vector/minimal-awesome-creative-letter-l-arrow-logo-design-vector-template_766194-1651.jpg?w=900" 
+             class="rounded rounded-circle" width="60" height="60">
+    </div>
+</nav>
+
+

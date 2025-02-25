@@ -1,0 +1,59 @@
+<app-header setcounter={{countervalue}}></app-header>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <li class="d-inline p-2">
+                        <button class="btn btn-danger">
+                            <span class="text-white">عودة الى القائمة الرئيسية</span>
+                        </button>
+                    </li>
+
+                    <div class="row mt-3">
+                        <div class="col-sm-10 col-8 col-lg-10">
+                            <h5 class="alert alert-primary">{{ data?.title }}</h5>
+                            <ul class="list-unstyled">
+                                <li class="p-2">{{ data?.description }}</li>
+                                <li class="p-2">
+                                    <span class="badge bg-danger text-white">{{ data?.price }} SAR</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <img [src]="data?.image" width="200" height="200" alt="Product Image">
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col d-flex justify-content-center">
+                            <ul class="list-unstyled">
+                                <li class="d-inline p-2">
+                                    <button class="btn btn-danger" (click)="increment()">
+                                        <span class="text-white">إضافة إلى السلة</span>
+                                    </button>
+                                </li>
+                                <li class="d-inline p-2">
+                                    <button class="btn btn-danger" (click)="decrement()">
+                                        <span class="text-white">إنقاص</span>
+                                    </button>
+                                </li>
+                                <li class="d-inline p-2">
+                                    <button class="btn btn-success" (click)="buyNow()">
+                                        <span class="text-white"> الشراء الآن</span>
+                                    </button>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
